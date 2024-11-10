@@ -61,5 +61,3 @@ int	main()
 
 	return(0);
 }*/
-
-// Le main ne prends pas en compte les ""
