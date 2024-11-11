@@ -1,14 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sbehar <sbehar@student.42nice.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/11 11:35:11 by sbehar            #+#    #+#             */
+/*   Updated: 2024/11/11 12:50:13 by sbehar           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
 int	ft_isprint(int i)
 {
-	if(i >= 32 && i <= 126)
-		return(1);
+	if (i >= 32 && i <= 126)
+		return (1);
 	else
-		return(0);
+		return (0);
 }
-
-// Vérifie si un caractère est imprimable (visible)
 
 /*void	ft_putchar(char c)
 {
@@ -35,11 +45,11 @@ void	ft_putnbr(int n)
 
 void	test_and_print(int value)
 {
-		ft_putstr("ft_isprint(");
-			ft_putnbr(value);
-				ft_putstr(") = ");
-					ft_putnbr(ft_isprint(value));
-						ft_putchar('\n');
+	ft_putstr("ft_isprint(");
+	ft_putnbr(value);
+	ft_putstr(") = ");
+	ft_putnbr(ft_isprint(value));
+	ft_putchar('\n');
 }
 
 int	main()

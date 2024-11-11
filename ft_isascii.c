@@ -1,14 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sbehar <sbehar@student.42nice.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/11 11:34:55 by sbehar            #+#    #+#             */
+/*   Updated: 2024/11/11 12:33:10 by sbehar           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
-int     ft_isascii(int i)
+int	ft_isascii(int i)
 {
-	        if(i >= 0 && i <= 127)
-			return(1);
-		else
-			return(0);
+	if (i >= 0 && i <= 127)
+		return (1);
+	else
+		return (0);
 }
-
-// Vérifie si un caractère passé en entrée est compris dans la table ASCII
 
 /*void	ft_putchar(char c)
 {
@@ -55,5 +65,3 @@ int	main()
 
 	return(0);
 }*/
-
-// Si la valeur est un caractère ASCII renvoie 1 sinon renvoie 0

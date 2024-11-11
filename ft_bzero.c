@@ -1,18 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sbehar <sbehar@student.42nice.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/11 11:30:49 by sbehar            #+#    #+#             */
+/*   Updated: 2024/11/11 12:19:32 by sbehar           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned char	*p = s;
+	unsigned char	*p;
 
-	while(n > 0)
+	p = s;
+	while (n > 0)
 	{
-		*p = 0; // assigne 0 à l'octet pointé par p
-		p++; // passe à l'octet suivant
-		n--; // compte le nombre d'octets restants à remplir
+		*p = 0;
+		p++;
+		n--;
 	}
 }
-
-// La fonction est l'équivalent de memset sauf qu'au lieu de remplacer la mémoire par quelque chose, elle la remplace avec des 0 toujours octet par octet.
 
 /*void	ft_putstr(const char *str)
 {
@@ -33,7 +44,9 @@ void	ft_putnbr(int n)
 	write(1, &digit, 1);
 }
 
-void	print_memory(void *ptr, size_t size) // La fonction affiche la mémoire pour que l'on puisse comparer avant/après utilisation de ft_bzero.
+void	print_memory(void *ptr, size_t size) 
+// La fonction affiche la mémoire pour que 
+// l'on puisse comparer avant/après utilisation de ft_bzero. 
 {
 	unsigned char *p = ptr;
 	size_t i = 0;
