@@ -6,12 +6,11 @@
 /*   By: sbehar <sbehar@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 11:35:23 by sbehar            #+#    #+#             */
-/*   Updated: 2024/11/11 13:21:37 by sbehar           ###   ########.fr       */
+/*   Updated: 2024/11/11 17:41:49 by sbehar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-// #include <stdio.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {

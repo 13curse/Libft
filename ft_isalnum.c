@@ -6,11 +6,11 @@
 /*   By: sbehar <sbehar@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 11:34:11 by sbehar            #+#    #+#             */
-/*   Updated: 2024/11/11 12:25:03 by sbehar           ###   ########.fr       */
+/*   Updated: 2024/11/11 17:40:52 by sbehar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 int	ft_isalnum(int i)
 {

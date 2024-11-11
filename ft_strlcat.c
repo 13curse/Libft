@@ -6,13 +6,11 @@
 /*   By: sbehar <sbehar@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 11:35:39 by sbehar            #+#    #+#             */
-/*   Updated: 2024/11/11 16:06:55 by sbehar           ###   ########.fr       */
+/*   Updated: 2024/11/11 17:41:44 by sbehar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <unistd.h>
-// #include <stdio.h>
+#include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {

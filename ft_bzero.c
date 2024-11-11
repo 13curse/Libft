@@ -6,11 +6,11 @@
 /*   By: sbehar <sbehar@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 11:30:49 by sbehar            #+#    #+#             */
-/*   Updated: 2024/11/11 12:19:32 by sbehar           ###   ########.fr       */
+/*   Updated: 2024/11/11 17:40:49 by sbehar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

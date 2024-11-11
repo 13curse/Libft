@@ -6,11 +6,11 @@
 /*   By: sbehar <sbehar@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 11:35:11 by sbehar            #+#    #+#             */
-/*   Updated: 2024/11/11 12:50:13 by sbehar           ###   ########.fr       */
+/*   Updated: 2024/11/11 17:41:08 by sbehar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 int	ft_isprint(int i)
 {
