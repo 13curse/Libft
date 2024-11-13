@@ -12,13 +12,35 @@
 
 #include "libft.h"
 
+void	ft_bzero(void *s, size_t n);
+
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-		void	*ptr;
+	void	*ptr;
 	
-		ptr = malloc(nmemb *size);
-		if (ptr == (void *)0)
-			return ((void *)0);
-		ft_bzero(ptr, size * nmemb);
-		return (ptr);
+	ptr = malloc(nmemb *size);
+	if (ptr == (void *)0)
+		return ((void *)0);
+	ft_bzero(ptr, size * nmemb);
+	return (ptr);
 }
+
+/*int	main()
+{
+	int	*int_array;
+	size_t	num_ints = 5;
+
+	int_array = (int *)ft_calloc(num_ints, sizeof(int));
+	if (int_array == (void *)0)
+	{
+		printf("Echec de l'allocation\n");
+		return (1);
+	}
+	if (int_array[0] == 0 && int_array[1] == 0 
+		&& int_array[2] == 0 && int_array[3] == 0 && int_array[4] == 0)
+		printf("Test réussi : Tous les éléments sont initialisés à zéro.\n");
+	else
+		printf("Test échoué : Les éléments ne se sont pas tous initialisés à zéro.\n");
+	free(int_array);
+	return (0);
+}/*
