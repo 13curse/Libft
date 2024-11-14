@@ -6,18 +6,18 @@
 /*   By: sbehar <sbehar@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 14:10:43 by sbehar            #+#    #+#             */
-/*   Updated: 2024/11/14 08:26:58 by sbehar           ###   ########.fr       */
+/*   Updated: 2024/11/14 11:22:16 by sbehar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n);
-
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
 
+	if ((nmemb >= 65535 && size >= 65535) || nmemb * size >= 65535)
+		return ((void *)0);
 	ptr = malloc(nmemb * size);
 	if (ptr == (void *)0)
 		return ((void *)0);
