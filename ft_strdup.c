@@ -49,4 +49,3 @@ char	*ft_strdup(const char *s)
 		printf("L'allocation a échoué.\n");
 	return (0);
 }*/
-

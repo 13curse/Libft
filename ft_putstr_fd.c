@@ -15,18 +15,18 @@
 void	ft_putstr_fd(char *s, int fd)
 {
 	if (s)
-	{	
-		while(*s)
-		{	
+	{
+		while (*s)
+		{
 			write(fd, s, 1);
 			s++;
 		}
 	}
 }
 
-int	main()
+/*int	main()
 {
 	ft_putstr_fd("Hello ", 1);
 	ft_putstr_fd("World\n", 2);
 	return (0);
-}
+}*/
