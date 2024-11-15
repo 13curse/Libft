@@ -17,7 +17,7 @@ static int	is_separator(char c, char separator)
     return (c == separator);
 }
 
-static int	count_words(const char *str, char *charset)
+static int	count_words(const char *str, char separator)
 {
 	int	count = 0;
 	int	in_word = 0;
@@ -56,37 +56,55 @@ static char	*copy_word(const char *str, int start, int end)
 char	**ft_split(char const *s, char c)
 {
 	char	**result;
-	int	word_count;
-	int	i;
-	int	start,
-	int	end;
+	int	counts[3];
+	int	start;
 
 	if (!s)
 		return ((void *)0);
-	word_count = count_words(str, charset);
-	result = malloc((word_count + 1) * sizeof(char *));
+	counts[0] = count_words(s, c);
+	result = malloc((counts[0] + 1) * sizeof(char *));
 	if (!result)
 		return ((void *)0);
-	i = 0;
+	counts[1] = 0;
 	start = 0;
-	while (i < word_count)
+	while (counts[1] < counts[0])
 	{
 		while (is_separator(s[start], c))
 			start++;
-		end = start;
-		while (s[end] && !is_separator(s[end], c))
-			end++;
-		result[i] = copy_word(s, start, end);
-		if (!result[i])
+		counts[2] = start;
+		while (s[counts[2]] && !is_separator(s[counts[2]], c))
+			counts[2]++;
+		if (!(result[counts[1]] = copy_word(s, start, counts[2])))
 		{
-			while (i < 0)
-				free(result[--i]);
-			free(result);
-			return ((void *)0);
+			while (counts[1] > 0)
+				free(result[counts[1]]);
+			return (free(result), ((void *)0));
 		}
-		start = end;
-		i++;
+		start = counts[2];
+		counts[1]++;
 	}
-	result[i] = ((void *)0);
-	return (result);
+	return (result[counts[1]] = ((void *)0), result);
 }
+
+/*int	main()
+{
+	char	*str = "Il, s'agit, d'un, test";
+	char	**result;
+	int	i;
+
+	result = ft_split(str, ',');
+	if (result)
+	{
+		i = 0;
+		while (result[i])
+		{
+			printf("'%s'\n", result[i]);
+			free(result[i]);
+			i++;
+		}
+		free(result);
+	}
+	else
+		printf("Erreur d'allocation mémoire.\n");
+	return (0);
+}*/
