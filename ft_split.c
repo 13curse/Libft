@@ -14,14 +14,16 @@
 
 static int	is_separator(char c, char separator)
 {
-    return (c == separator);
+	return (c == separator);
 }
 
 static int	count_words(const char *str, char separator)
 {
-	int	count = 0;
-	int	in_word = 0;
+	int	count;
+	int	in_word;
 
+	count = 0;
+	in_word = 0;
 	while (*str)
 	{
 		if (!is_separator(*str, separator) && !in_word)
@@ -39,7 +41,7 @@ static int	count_words(const char *str, char separator)
 static char	*copy_word(const char *str, int start, int end)
 {
 	char	*word;
-	int	i;
+	int		i;
 
 	word = malloc(sizeof(char) * (end - start + 1));
 	if (!word)
@@ -51,39 +53,41 @@ static char	*copy_word(const char *str, int start, int end)
 	return (word);
 }
 
-
+static char	**ft_free_split(char **split, int count)
+{
+	while (count > 0)
+		free(split[--count]);
+	free(split);
+	return ((void *)0);
+}
 
 char	**ft_split(char const *s, char c)
 {
 	char	**result;
-	int	counts[3];
-	int	start;
+	int		i;
+	int		start;
+	int		end;
 
 	if (!s)
 		return ((void *)0);
-	counts[0] = count_words(s, c);
-	result = malloc((counts[0] + 1) * sizeof(char *));
+	result = (char **)ft_calloc(sizeof(char *), (count_words(s, c) + 1));
 	if (!result)
 		return ((void *)0);
-	counts[1] = 0;
+	i = -1;
 	start = 0;
-	while (counts[1] < counts[0])
+	while (++i < count_words(s, c))
 	{
 		while (is_separator(s[start], c))
 			start++;
-		counts[2] = start;
-		while (s[counts[2]] && !is_separator(s[counts[2]], c))
-			counts[2]++;
-		if (!(result[counts[1]] = copy_word(s, start, counts[2])))
-		{
-			while (counts[1] > 0)
-				free(result[counts[1]]);
-			return (free(result), ((void *)0));
-		}
-		start = counts[2];
-		counts[1]++;
+		end = start;
+		while (s[end] && !is_separator(s[end], c))
+			end++;
+		result[i] = copy_word(s, start, end);
+		if (!result[i])
+			return (ft_free_split(result, i));
+		start = end;
 	}
-	return (result[counts[1]] = ((void *)0), result);
+	return (result);
 }
 
 /*int	main()
