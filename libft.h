@@ -6,7 +6,7 @@
 /*   By: sbehar <sbehar@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 17:27:38 by sbehar            #+#    #+#             */
-/*   Updated: 2024/11/18 11:22:30 by sbehar           ###   ########.fr       */
+/*   Updated: 2024/11/19 11:00:18 by sbehar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@
 # include <unistd.h>
 # include <stddef.h>
 # include <stdio.h>
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}					t_list;
 
 void	ft_bzero(void *s, size_t n);
 int		ft_isalnum(int i);
@@ -53,5 +59,6 @@ size_t	ft_strlen(const char *str);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 int		ft_atoi(const char *nptr);
+t_list	*ft_lstnew(void *content);
 
 #endif
